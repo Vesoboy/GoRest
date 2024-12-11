@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST_DOCKER}:${DB_PORT}/${DB_DBNAME}?sslmode=${DB_SSLMODE}
+    depends_on:                
+      - db
+    networks:
+      - gorest-network
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DBNAME}
+    ports:
+      - "5432:5432"
+    networks:
+      - gorest-network
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+networks:
+  gorest-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
