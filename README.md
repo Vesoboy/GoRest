@@ -29,8 +29,8 @@
     Запуск проекта
 
 Установите Docker и Docker Compose на вашем компьютере.
-    1. Откройте/Скачайте Docker Desktop
-    2. Выполните команду "docker-compose --env-file=config.env up --build".
+    1. Откройте/Скачайте Docker Desktop.
+    2. Выполните в директоии команду "docker-compose --env-file=config.env up --build".
     3. Проект будет доступен по адресу http://localhost:8080.
 
 Тестирование
