@@ -22,6 +22,10 @@
 
     docker-compose.yml: Файл, содержащий конфигурацию для Docker.
 
+    main_api_test.go, Файл, содержащий функцию TestWalletAPI для тестирования REST API
+    main_getWallet_test.go, Файл, содержащий функцию TestGetRPSLoad для тестирования RPS
+    main_postWallet_test.go, Файл, содержащий функцию TestPostRPSLoad для тестирования RPS
+
 Функциональность
     Добавление кошелька
     Получение информации о кошельке
